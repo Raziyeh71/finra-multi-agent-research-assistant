@@ -13,13 +13,13 @@
 **Key Highlights:**
 
 - 🤖 **6-Agent LangGraph Pipeline** — Memory → Planner → Retrievers → Evaluator → Summarizer → Reporter
-- 🔍 **Multi-Source Scraping** — arXiv, Google Scholar, Nature, IEEE, YouTube (all FREE via Playwright)
+- 🔍 **Multi-Source Scraping** — arXiv, Google Scholar, Nature, IEEE, YouTube via Playwright
 - 🧠 **GPT-4o-mini Powered** — Intelligent planning, domain-specific summaries, quality filtering
 - 💾 **Semantic Memory** — ChromaDB-backed long-term recall (MemGPT-inspired)
 - 🌊 **Real-time Streaming** — Server-Sent Events with beautiful Tailwind UI
 - ☁️ **Cloud-Ready** — One-command deploy to Google Cloud Run
 
-> **💡 Only OpenAI API key required** — all scraping tools are FREE!
+> **💡 Only OpenAI API key required** — all other tools use web scraping.
 
 ---
 
@@ -72,9 +72,9 @@ python api.py
 
 ### Core Capabilities
 
-- **Paper Sources**: arXiv API, Google Scholar, Nature, IEEE (all FREE!)
-- **Video Sources**: YouTube (Playwright scraping - FREE!)
-- **Web Search**: Google search via Playwright (FREE!)
+- **Paper Sources**: arXiv API, Google Scholar, Nature, IEEE
+- **Video Sources**: YouTube (Playwright scraping)
+- **Web Search**: Google search via Playwright
 - **Smart Filtering**: AI/ML + finance relevance detection, excludes crypto
 - **Date Filtering**: Configurable recency filter (e.g., last 30/60/90 days)
 - **AI Summaries**: GPT-4o-mini generates concise, trader-focused summaries
@@ -118,7 +118,7 @@ The system uses advanced prompt engineering techniques for finance/trading domai
 
 - Python 3.8+ (3.10+ recommended)
 - **OpenAI API key** (ONLY required API key!)
-- No other API keys needed - everything else is FREE!
+- No other API keys needed
 
 ## Installation
 
@@ -371,7 +371,7 @@ The system uses the same multi-agent pipeline for both CLI and API:
 - ✅ **Async/Parallel Execution**: 5-10x speed improvement
 - ✅ **LLM-Based Planning**: Intelligent research strategy
 - ✅ **Multi-Agent System**: Specialized agents with LangGraph
-- ✅ **Web Search**: Google via Playwright (FREE, no API key)
+- ✅ **Web Search**: Google via Playwright
 - ✅ **arXiv API Integration**: More reliable than web scraping
 - ✅ **Date Parsing**: Uses `python-dateutil` for accurate date extraction
 - ✅ **Recency Filter**: Configurable age limit (e.g., last 30/60/90 days)
@@ -512,8 +512,6 @@ gcloud run services update finra \
 # 5. Get your live URL
 gcloud run services describe finra --region us-central1 --format="value(status.url)"
 ```
-
-**Estimated Cost:** $0-5/month for low traffic (Cloud Run free tier).
 
 ## 🔮 Future Enhancements
 
