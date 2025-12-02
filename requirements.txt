@@ -1,0 +1,43 @@
+# ============================================
+# FinRA Multi-Agent System Dependencies
+# ============================================
+# Only OpenAI API key required!
+# All other tools are FREE - no API keys needed
+# ============================================
+
+# === Core (Required) ===
+openai>=1.40.0             # ONLY paid API - GPT-4o-mini (latest client)
+python-dotenv>=1.0.0       # Environment variables
+pydantic>=2.5.0            # Data validation
+
+# === Web Scraping (FREE - no API keys!) ===
+playwright>=1.40.0         # Browser automation (WebGPT-style)
+beautifulsoup4>=4.12.2     # HTML parsing
+lxml>=4.9.3                # XML parsing (arXiv API)
+httpx>=0.25.2              # Async HTTP client
+
+# === Academic Search (FREE - no API keys!) ===
+scholarly>=1.7.0           # Google Scholar (optional, can use Playwright)
+
+# === Memory System (FREE - local storage!) ===
+chromadb>=0.4.0            # Vector database for MemGPT-style memory
+
+# === Multi-Agent Orchestration (LangGraph 0.2.x) ===
+langgraph>=0.2.0           # LangGraph 0.2.x with streaming & checkpointing
+langgraph-checkpoint>=1.0.0  # Checkpointing support (optional)
+
+# === FastAPI (for deployment) ===
+fastapi>=0.104.0           # Web framework
+uvicorn>=0.24.0            # ASGI server
+sse-starlette>=1.6.0       # Server-Sent Events
+
+# === Utilities ===
+python-dateutil>=2.8.2     # Date parsing
+requests>=2.31.0           # HTTP requests (fallback)
+
+# ============================================
+# REMOVED (not needed - using Playwright instead):
+# - tavily-python (paid API)
+# - google-search-results (paid SerpAPI)
+# - langchain (not needed for our use case)
+# ============================================

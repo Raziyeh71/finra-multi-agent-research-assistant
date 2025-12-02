@@ -1,0 +1,68 @@
+# Environment variables (NEVER commit!)
+.env
+.env.local
+.env.production
+.env*.local
+
+# API Keys and secrets
+*.pem
+*.key
+secrets/
+
+# Debug files
+debug/
+*.html
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+*.DS_Store
+
+# Output/Generated files (keep examples)
+finra_research_results.json
+finance_ai_papers.json
+finance_ai_videos.json
+
+# Large files (don't commit)
+*.tar.gz
+*.zip
+google-cloud-cli-darwin-arm.tar.gz
+
+# ChromaDB local storage
+memory/chroma_db/
+finra_memory/
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/

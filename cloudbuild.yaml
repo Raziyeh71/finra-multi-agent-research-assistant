@@ -1,0 +1,45 @@
+# Cloud Build configuration for automatic deployment
+# Triggered on git push (if connected to Cloud Build)
+
+steps:
+  # Step 1: Build the Docker container
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/finra', '.']
+
+  # Step 2: Push to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/finra']
+
+  # Step 3: Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'finra'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/finra'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--memory'
+      - '2Gi'
+      - '--cpu'
+      - '1'
+      - '--timeout'
+      - '300'
+      - '--concurrency'
+      - '80'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '10'
+
+# Store the built image in Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/finra'
+
+# Build timeout (Playwright image is large)
+timeout: '1200s'
